@@ -30,7 +30,7 @@ namespace TNM\GolfCourses\Controller;
 /**
  * GolfCourseController
  */
-class GolfCourseController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class ListController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     /**

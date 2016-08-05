@@ -1,5 +1,6 @@
 <?php
 namespace TNM\GolfCourses\Tests\Unit\Controller;
+
 /***************************************************************
  *  Copyright notice
  *
@@ -25,7 +26,7 @@ namespace TNM\GolfCourses\Tests\Unit\Controller;
  ***************************************************************/
 
 /**
- * Test case for class TNM\GolfCourses\Controller\GolfCourseController.
+ * Test case for class TNM\GolfCourses\Controller\ListController.
  *
  * @author Tomas Norre Mikkelsen <tomasnorre@gmail.com>
  */
@@ -33,13 +34,13 @@ class GolfCourseControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
 
 	/**
-	 * @var \TNM\GolfCourses\Controller\GolfCourseController
+	 * @var \TNM\GolfCourses\Controller\ListController
 	 */
 	protected $subject = NULL;
 
 	public function setUp()
 	{
-		$this->subject = $this->getMock('TNM\\GolfCourses\\Controller\\GolfCourseController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
+		$this->subject = $this->getMock('TNM\\GolfCourses\\Controller\\ListController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
 	public function tearDown()
@@ -52,7 +53,6 @@ class GolfCourseControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function listActionFetchesAllGolfCoursesFromRepositoryAndAssignsThemToView()
 	{
-
 		$allGolfCourses = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
 
 		$golfCourseRepository = $this->getMock('TNM\\GolfCourses\\Domain\\Repository\\GolfCourseRepository', array('findAll'), array(), '', FALSE);

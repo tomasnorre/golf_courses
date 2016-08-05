@@ -7,12 +7,12 @@ if (!defined('TYPO3_MODE')) {
 	'TNM.' . $_EXTKEY,
 	'Golfcourses',
 	array(
-		'ListController' => 'list',
+		'List' => 'list',
 		
 	),
 	// non-cacheable actions
 	array(
-		'GolfCourse' => '',
+		'List' => '',
 		
 	)
 );
