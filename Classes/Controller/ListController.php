@@ -26,6 +26,8 @@ namespace TNM\GolfCourses\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use SJBR\StaticInfoTables\Domain\Model\Country;
+use TNM\GolfCourses\Domain\Model\GolfCourse;
 
 /**
  * GolfCourseController
@@ -39,7 +41,13 @@ class ListController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      * @var \TNM\GolfCourses\Domain\Repository\GolfCourseRepository
      * @inject
      */
-    protected $golfCourseRepository = NULL;
+    protected $golfCourseRepository = null;
+
+    /**
+     * @var \SJBR\StaticInfoTables\Domain\Repository\CountryRepository
+     * @inject
+     */
+    protected $countryRepository = null;
     
     /**
      * action list
@@ -48,7 +56,28 @@ class ListController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
-        $golfCourses = $this->golfCourseRepository->findAll();
-        $this->view->assign('golfCourses', $golfCourses);
+        $countryAndCourses = [];
+        $coursesTotal = 0;
+        $countriesUidsInUse = $this->golfCourseRepository->findCountriesUidsInUse();
+
+        foreach ($countriesUidsInUse as $countryUid) {
+            /** @var Country $country */
+            $country = $this->countryRepository->findByUid($countryUid);
+            $countryName = $country->getShortNameEn();
+            $coursesInCountry = $this->golfCourseRepository->findAllInCountry($countryUid);
+            if(!count($coursesInCountry)) {
+                continue;
+            }
+            $countryAndCourses[$countryName]['name'] = $countryName;
+            /** @var GolfCourse $course */
+            foreach ($coursesInCountry as $course) {
+                $countryAndCourses[$countryName]['courses'][$course->getUid()] = $course;
+                $coursesTotal++;
+            }
+        }
+
+        $this->view->assign('countryAndCourses', $countryAndCourses);
+        $this->view->assign('coursesCount', $coursesTotal);
+        $this->view->assign('countriesCount', count($countryAndCourses));
     }
 }

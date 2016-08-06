@@ -27,6 +27,7 @@ namespace TNM\GolfCourses\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TNM\GolfCourses\Domain\Model\GolfCourse;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /**
@@ -36,18 +37,41 @@ class GolfCourseRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 
     /**
+     * @param $countryUid
+     *
      * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */
-    public function findAll()
+    public function findAllInCountry($countryUid)
     {
         /** @var QueryInterface $query */
         $query = $this->createQuery();
+
         $querySettings = $query->getQuerySettings();
         $querySettings->setRespectStoragePage(false);
-        $querySettings->setIgnoreEnableFields(true);
+        $querySettings->setIgnoreEnableFields(false);
+
+        $query->matching($query->equals('country', $countryUid));
         $query->setOrderings(['name' => 'ASC']);
         $query->setQuerySettings($querySettings);
+
         return $query->execute();
     }
 
+    /**
+     * @return array
+     */
+    public function findCountriesUidsInUse()
+    {
+        $uids = [];
+        $courses = $GLOBALS['TYPO3_DB']->exec_SELECTquery(
+            'DISTINCT country',
+            'tx_golfcourses_domain_model_golfcourse'
+        );
+
+        foreach ($courses as $course) {
+            $uids[] = $course['country'];
+        }
+
+        return $uids;
+    }
 }
