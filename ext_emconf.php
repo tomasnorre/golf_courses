@@ -10,7 +10,7 @@
  * "version" and "dependencies" must not be touched!
  ***************************************************************/
 
-$EM_CONF[$_EXTKEY] = array(
+$EM_CONF[$_EXTKEY] = [
 	'title' => 'Golf Courses',
 	'description' => 'Displayed which golf courses played',
 	'category' => 'plugin',
@@ -22,14 +22,14 @@ $EM_CONF[$_EXTKEY] = array(
 	'createDirs' => '',
 	'clearCacheOnLoad' => 0,
 	'version' => '',
-	'constraints' => array(
-		'depends' => array(
+	'constraints' => [
+		'depends' => [
 			'typo3' => '7.6.0-7.6.99',
 			'static_info_tables' => '',
-		),
-		'conflicts' => array(
-		),
-		'suggests' => array(
-		),
-	),
-);
+		],
+		'conflicts' => [
+		],
+		'suggests' => [
+		],
+	],
+];

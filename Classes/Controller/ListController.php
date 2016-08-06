@@ -51,5 +51,4 @@ class ListController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $golfCourses = $this->golfCourseRepository->findAll();
         $this->view->assign('golfCourses', $golfCourses);
     }
-
 }

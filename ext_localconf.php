@@ -5,14 +5,14 @@ if (!defined('TYPO3_MODE')) {
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'TNM.' . $_EXTKEY,
-	'Golfcourses',
-	array(
+	'GolfCourses',
+	[
 		'List' => 'list',
-		
-	),
+
+	],
 	// non-cacheable actions
-	array(
-		'List' => '',
-		
-	)
+	[
+		'List' => 'list',
+
+	]
 );

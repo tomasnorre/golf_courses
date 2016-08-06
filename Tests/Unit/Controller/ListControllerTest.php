@@ -40,7 +40,7 @@ class GolfCourseControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 
 	public function setUp()
 	{
-		$this->subject = $this->getMock('TNM\\GolfCourses\\Controller\\ListController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
+		$this->subject = $this->getMock('TNM\\GolfCourses\\Controller\\ListController', ['redirect', 'forward', 'addFlashMessage'], [], '', FALSE);
 	}
 
 	public function tearDown()
@@ -53,9 +53,9 @@ class GolfCourseControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 */
 	public function listActionFetchesAllGolfCoursesFromRepositoryAndAssignsThemToView()
 	{
-		$allGolfCourses = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', array(), array(), '', FALSE);
+		$allGolfCourses = $this->getMock('TYPO3\\CMS\\Extbase\\Persistence\\ObjectStorage', [], [], '', FALSE);
 
-		$golfCourseRepository = $this->getMock('TNM\\GolfCourses\\Domain\\Repository\\GolfCourseRepository', array('findAll'), array(), '', FALSE);
+		$golfCourseRepository = $this->getMock('TNM\\GolfCourses\\Domain\\Repository\\GolfCourseRepository', ['findAll'], [], '', FALSE);
 		$golfCourseRepository->expects($this->once())->method('findAll')->will($this->returnValue($allGolfCourses));
 		$this->inject($this->subject, 'golfCourseRepository', $golfCourseRepository);
 

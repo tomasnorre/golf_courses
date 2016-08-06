@@ -27,11 +27,27 @@ namespace TNM\GolfCourses\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+
 /**
  * The repository for GolfCourses
  */
 class GolfCourseRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
 
-    
+    /**
+     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findAll()
+    {
+        /** @var QueryInterface $query */
+        $query = $this->createQuery();
+        $querySettings = $query->getQuerySettings();
+        $querySettings->setRespectStoragePage(false);
+        $querySettings->setIgnoreEnableFields(true);
+        $query->setOrderings(['name' => 'ASC']);
+        $query->setQuerySettings($querySettings);
+        return $query->execute();
+    }
+
 }
