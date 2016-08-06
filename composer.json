@@ -5,8 +5,15 @@
   "license": ["GPL-2.0+"],
   "version": "1.0.0",
   "minimum-stability": "dev",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://composer.typo3.org/"
+    }
+  ],
   "require": {
-    "typo3/cms": ">=7.6.0,<8.0"
+    "typo3/cms": ">=7.6.0,<8.0",
+    "typo3-ter/static-info-tables": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.7.0"
