@@ -130,13 +130,26 @@ class GolfCourseTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 	 * @test
 	 */
 	public function getCountryReturnsInitialValueForInt()
-	{	}
+	{
+		$this->assertEquals(
+			0,
+			$this->subject->getCountry()
+		);
+	}
 
 	/**
 	 * @test
 	 */
 	public function setCountryForIntSetsCountry()
-	{	}
+	{
+		$countryUid = 701;
+		$this->subject->setCountry($countryUid);
+
+		$this->assertEquals(
+			$countryUid,
+			$this->subject->getCountry()
+		);
+	}
 
 	/**
 	 * @test
