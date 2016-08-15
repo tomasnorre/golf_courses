@@ -6,8 +6,17 @@ filter:
         - 'Classes/*'
         - 'Configuration/*'
 
-tools:
+checks:
+    php:
+        remove_extra_empty_lines: true
+        uppercase_constants: true
+        properties_in_camelcaps: true
+        phpunit_assertions: true
+        parameters_in_camelcaps: true
+        parameter_doc_comments: true
+        encourage_single_quotes: true
 
+tools:
     external_code_coverage:
         timeout: 700
         runs: 1
@@ -18,7 +27,7 @@ tools:
     php_code_sniffer:
         enabled: true
         config:
-            standard: TYPO3CMS
+            standard: "PSR2"
 
     php_cs_fixer:
         enabled: true
