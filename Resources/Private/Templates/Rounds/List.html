@@ -1,0 +1,27 @@
+<f:layout name="Default" />
+<f:section name="main">
+	<f:flashMessages />
+
+	<table class="table table-striped">
+		<tbody>
+		<tr>
+			<th>Date</th>
+			<th>Course</th>
+			<th>Par</th>
+			<th>Strokes</th>
+			<th>Score</th>
+		</tr>
+		<f:for each="{rounds}" as="round">
+			<tr>
+				<td><f:format.date format="d.m.Y">{round.date}</f:format.date></td>
+				<td>{round.course}</td>
+				<td>{round.par}</td>
+				<td>{round.strokes}</td>
+				<td>{round.score} {f:if(condition:'{round.regulation}', then:'*')}</td>
+			</tr>
+
+		</f:for>
+
+		</tbody>
+	</table>
+</f:section>

@@ -1,7 +1,6 @@
 <?php
 namespace TNM\GolfCourses\Controller;
 
-
 /***************************************************************
  *
  *  Copyright notice
@@ -26,13 +25,15 @@ namespace TNM\GolfCourses\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
 use SJBR\StaticInfoTables\Domain\Model\Country;
 use TNM\GolfCourses\Domain\Model\GolfCourse;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * GolfCourseController
  */
-class ListController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class ListController extends ActionController
 {
 
     /**
@@ -56,6 +57,7 @@ class ListController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function listAction()
     {
+
         $countryAndCourses = [];
         $coursesTotal = 0;
         $countriesUidsInUse = $this->golfCourseRepository->findCountriesUidsInUse();
@@ -65,7 +67,7 @@ class ListController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
             $country = $this->countryRepository->findByUid($countryUid);
             $countryName = $country->getShortNameEn();
             $coursesInCountry = $this->golfCourseRepository->findAllInCountry($countryUid);
-            if(!count($coursesInCountry)) {
+            if (!count($coursesInCountry)) {
                 continue;
             }
             $countryAndCourses[$countryName]['name'] = $countryName;

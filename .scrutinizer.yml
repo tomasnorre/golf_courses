@@ -16,6 +16,15 @@ checks:
         parameter_doc_comments: true
         encourage_single_quotes: true
 
+coding_style:
+    php:
+        indentation:
+            general:
+                use_tabs: false
+        spaces:
+            around_operators:
+                concatenation: true
+
 tools:
     external_code_coverage:
         timeout: 700

@@ -1,5 +1,5 @@
 <?php
-namespace TNM\GolfCourses\Tests\Functional\Domain\Model;
+namespace TNM\GolfCourses\Domain\Repository;
 
 /***************************************************************
  *  Copyright notice
@@ -25,18 +25,14 @@ namespace TNM\GolfCourses\Tests\Functional\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Core\Tests\FunctionalTestCase;
-
 /**
- * Class GolfCourseTest
- * @package TNM\GolfCourses\Tests\Functional\Domain\Model
+ * Class GolfRoundRepository
+ *
+ * @package TNM\GolfCourses\Domain\Repository
  */
-class GolfCourseTest extends FunctionalTestCase {
-
-    /**
-    * @test
-    */
-    public function dummyTest() {
-        $this->assertTrue(TRUE);
+class GolfRoundRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+{
+    public function initializeObject() {
+        $this->setDefaultOrderings(['date' => 'DESC']);
     }
 }

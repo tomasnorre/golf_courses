@@ -15,19 +15,15 @@ matrix:
   exclude:
     - php: 5.5
       env: TYPO3_VERSION=^8.4 COVERAGE=0 FUNCTIONAL=0
-    - php: 5.5
-      env: TYPO3_VERSION=^8.4 COVERAGE=0 FUNCTIONAL=1
     - php: 5.6
       env: TYPO3_VERSION=^8.4 COVERAGE=0 FUNCTIONAL=0
-    - php: 5.6
-      env: TYPO3_VERSION=^8.4 COVERAGE=0 FUNCTIONAL=1
-    - php: 5.5
-      env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=1
+    - php: hhvm
+      env: TYPO3_VERSION=^8.4 COVERAGE=0 FUNCTIONAL=0
     - php: 5.5
       env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=0
     - php: 5.6
-      env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=1
-    - php: 5.6
+      env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=0
+    - php: hhvm
       env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=0
   include:
     - php: 7.0
@@ -37,8 +33,6 @@ matrix:
     - php: 7.0
       env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=1
   allow_failures:
-    - env: TYPO3_VERSION=^8.4 COVERAGE=0 FUNCTIONAL=1
-    - env: TYPO3_VERSION=^8.4 COVERAGE=0 FUNCTIONAL=0
     - env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=1
     - env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=0
 

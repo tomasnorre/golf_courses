@@ -1,7 +1,6 @@
 <?php
 namespace TNM\GolfCourses\Domain\Repository;
 
-
 /***************************************************************
  *
  *  Copyright notice

@@ -3,6 +3,7 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2016-08-04T18:38:20Z" product-name="golf_courses">
 		<header/>
 		<body>
+			<!-- Golf Course -->
 			<trans-unit id="tx_golfcourses_domain_model_golfcourse">
 				<source>Golf Course</source>
 			</trans-unit>
@@ -20,6 +21,29 @@
 			</trans-unit>
 			<trans-unit id="tx_golfcourses_domain_model_golfcourse.logo">
 				<source>Logo</source>
+			</trans-unit>
+
+			<!-- Golf Round -->
+			<trans-unit id="tx_golfcourses_domain_model_golfround">
+				<source>Golf Round</source>
+			</trans-unit>
+			<trans-unit id="tx_golfcourses_domain_model_golfround.date">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_golfcourses_domain_model_golfround.course">
+				<source>Course</source>
+			</trans-unit>
+			<trans-unit id="tx_golfcourses_domain_model_golfround.par">
+				<source>Par</source>
+			</trans-unit>
+			<trans-unit id="tx_golfcourses_domain_model_golfround.strokes">
+				<source>Strokes</source>
+			</trans-unit>
+			<trans-unit id="tx_golfcourses_domain_model_golfround.score">
+				<source>Score</source>
+			</trans-unit>
+			<trans-unit id="tx_golfcourses_domain_model_golfround.regulation">
+				<source>Regulation</source>
 			</trans-unit>
 		</body>
 	</file>
