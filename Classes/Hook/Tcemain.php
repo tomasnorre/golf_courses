@@ -62,7 +62,10 @@ class Tcemain
      */
     public function processDatamap_preProcessFieldArray(&$incomingFieldArray, $table, $id, DataHandler $dataHandler)
     {
-        if (static::GOLF_ROUND_TALBE !== $table) {
+        if (static::GOLF_ROUND_TALBE !== $table
+            || isset($incomingFieldArray['par'])
+            || isset($incomingFieldArray['strokes'])
+        ) {
             return;
         }
 
