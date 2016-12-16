@@ -8,7 +8,7 @@
 	<p>I have played {coursesCount} courses in total, in {countriesCount} countries. The complete list can be seen below.</p>
 
 	<f:for each="{countryAndCourses}" as="country">
-		<h3>{country.name}</h3>
+		<h3>{country.name} ({country.coursesPlayed})</h3>
 		<ul>
 			<f:for each="{country.courses}" as="golfCourse">
 				<li class="golfCourse"><a href="{golfCourse.website}" title="{golfCourse.name}">{golfCourse.name}</a> <span style="font-size: 12px">{golfCourse.comment}</span></li>

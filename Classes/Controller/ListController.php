@@ -76,6 +76,8 @@ class ListController extends ActionController
                 $countryAndCourses[$countryName]['courses'][$course->getUid()] = $course;
                 $coursesTotal++;
             }
+            $countryAndCourses[$countryName]['coursesPlayed'] = $coursesInCountry->count();
+
         }
 
         $this->view->assign('countryAndCourses', $countryAndCourses);
