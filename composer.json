@@ -17,7 +17,7 @@
   ],
   "require": {
     "typo3/cms": ">=7.6.0,<8.9.99",
-    "sjbr/static-info-tables": ">=6.3.10"
+    "sjbr/static-info-tables": "dev-8-compatible"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.7.0"
