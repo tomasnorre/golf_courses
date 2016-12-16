@@ -35,7 +35,8 @@ matrix:
   allow_failures:
     - env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=1
     - env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=0
-
+    - env: TYPO3_VERSION=^8.4 COVERAGE=0 FUNCTIONAL=1
+    - env: TYPO3_VERSION=^8.4 COVERAGE=0 FUNCTIONAL=0
 notifications:
   email:
     recipients:
