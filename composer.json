@@ -4,6 +4,7 @@
   "description": "Displays which golf courses played",
   "license": ["GPL-2.0+"],
   "version": "1.0.0",
+  "minimum-stability": "dev",
   "repositories": [
     {
       "type": "composer",
@@ -16,7 +17,7 @@
   ],
   "require": {
     "typo3/cms": ">=7.6.0,<8.9.99",
-    "sjbr/static-info-tables": "dev-master"
+    "sjbr/static-info-tables": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.7.0"
@@ -53,5 +54,8 @@
       "cms-package-dir": "{$vendor-dir}/typo3/cms",
       "web-dir": ".Build/Web"
     }
+  },
+  "replace": {
+    "golf_courses": "self.version"
   }
 }
