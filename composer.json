@@ -4,7 +4,6 @@
   "description": "Displays which golf courses played",
   "license": ["GPL-2.0+"],
   "version": "1.0.0",
-  "minimum-stability": "dev",
   "repositories": [
     {
       "type": "composer",
