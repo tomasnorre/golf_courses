@@ -20,7 +20,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'name,website,comment,country,logo,',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('golf_courses') . 'Resources/Public/Icons/tx_golfcourses_domain_model_golfcourse.png'
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('golf_courses') . 'Resources/Public/Icons/tx_golfcourses_domain_model_golfcourse.png'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, website, comment, country, logo',
