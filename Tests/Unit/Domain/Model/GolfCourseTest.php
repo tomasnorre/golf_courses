@@ -36,144 +36,144 @@ namespace TNM\GolfCourses\Tests\Unit\Domain\Model;
  */
 class GolfCourseTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
-	/**
-	 * @var \TNM\GolfCourses\Domain\Model\GolfCourse
-	 */
-	protected $subject = NULL;
+    /**
+     * @var \TNM\GolfCourses\Domain\Model\GolfCourse
+     */
+    protected $subject = null;
 
-	public function setUp()
-	{
-		$this->subject = new \TNM\GolfCourses\Domain\Model\GolfCourse();
-	}
+    public function setUp()
+    {
+        $this->subject = new \TNM\GolfCourses\Domain\Model\GolfCourse();
+    }
 
-	public function tearDown()
-	{
-		unset($this->subject);
-	}
+    public function tearDown()
+    {
+        unset($this->subject);
+    }
 
-	/**
-	 * @test
-	 */
-	public function getNameReturnsInitialValueForString()
-	{
-		$this->assertSame(
-			'',
-			$this->subject->getName()
-		);
-	}
+    /**
+     * @test
+     */
+    public function getNameReturnsInitialValueForString()
+    {
+        $this->assertSame(
+            '',
+            $this->subject->getName()
+        );
+    }
 
-	/**
-	 * @test
-	 */
-	public function setNameForStringSetsName()
-	{
-		$this->subject->setName('Conceived at T3CON10');
+    /**
+     * @test
+     */
+    public function setNameForStringSetsName()
+    {
+        $this->subject->setName('Conceived at T3CON10');
 
-		$this->assertAttributeEquals(
-			'Conceived at T3CON10',
-			'name',
-			$this->subject
-		);
-	}
+        $this->assertAttributeEquals(
+            'Conceived at T3CON10',
+            'name',
+            $this->subject
+        );
+    }
 
-	/**
-	 * @test
-	 */
-	public function getWebsiteReturnsInitialValueForString()
-	{
-		$this->assertSame(
-			'',
-			$this->subject->getWebsite()
-		);
-	}
+    /**
+     * @test
+     */
+    public function getWebsiteReturnsInitialValueForString()
+    {
+        $this->assertSame(
+            '',
+            $this->subject->getWebsite()
+        );
+    }
 
-	/**
-	 * @test
-	 */
-	public function setWebsiteForStringSetsWebsite()
-	{
-		$this->subject->setWebsite('Conceived at T3CON10');
+    /**
+     * @test
+     */
+    public function setWebsiteForStringSetsWebsite()
+    {
+        $this->subject->setWebsite('Conceived at T3CON10');
 
-		$this->assertAttributeEquals(
-			'Conceived at T3CON10',
-			'website',
-			$this->subject
-		);
-	}
+        $this->assertAttributeEquals(
+            'Conceived at T3CON10',
+            'website',
+            $this->subject
+        );
+    }
 
-	/**
-	 * @test
-	 */
-	public function getCommentReturnsInitialValueForString()
-	{
-		$this->assertSame(
-			'',
-			$this->subject->getComment()
-		);
-	}
+    /**
+     * @test
+     */
+    public function getCommentReturnsInitialValueForString()
+    {
+        $this->assertSame(
+            '',
+            $this->subject->getComment()
+        );
+    }
 
-	/**
-	 * @test
-	 */
-	public function setCommentForStringSetsComment()
-	{
-		$this->subject->setComment('Conceived at T3CON10');
+    /**
+     * @test
+     */
+    public function setCommentForStringSetsComment()
+    {
+        $this->subject->setComment('Conceived at T3CON10');
 
-		$this->assertAttributeEquals(
-			'Conceived at T3CON10',
-			'comment',
-			$this->subject
-		);
-	}
+        $this->assertAttributeEquals(
+            'Conceived at T3CON10',
+            'comment',
+            $this->subject
+        );
+    }
 
-	/**
-	 * @test
-	 */
-	public function getCountryReturnsInitialValueForInt()
-	{
-		$this->assertEquals(
-			0,
-			$this->subject->getCountry()
-		);
-	}
+    /**
+     * @test
+     */
+    public function getCountryReturnsInitialValueForInt()
+    {
+        $this->assertEquals(
+            0,
+            $this->subject->getCountry()
+        );
+    }
 
-	/**
-	 * @test
-	 */
-	public function setCountryForIntSetsCountry()
-	{
-		$countryUid = 701;
-		$this->subject->setCountry($countryUid);
+    /**
+     * @test
+     */
+    public function setCountryForIntSetsCountry()
+    {
+        $countryUid = 701;
+        $this->subject->setCountry($countryUid);
 
-		$this->assertEquals(
-			$countryUid,
-			$this->subject->getCountry()
-		);
-	}
+        $this->assertEquals(
+            $countryUid,
+            $this->subject->getCountry()
+        );
+    }
 
-	/**
-	 * @test
-	 */
-	public function getLogoReturnsInitialValueForFileReference()
-	{
-		$this->assertEquals(
-			NULL,
-			$this->subject->getLogo()
-		);
-	}
+    /**
+     * @test
+     */
+    public function getLogoReturnsInitialValueForFileReference()
+    {
+        $this->assertEquals(
+            null,
+            $this->subject->getLogo()
+        );
+    }
 
-	/**
-	 * @test
-	 */
-	public function setLogoForFileReferenceSetsLogo()
-	{
-		$fileReferenceFixture = new \TYPO3\CMS\Extbase\Domain\Model\FileReference();
-		$this->subject->setLogo($fileReferenceFixture);
+    /**
+     * @test
+     */
+    public function setLogoForFileReferenceSetsLogo()
+    {
+        $fileReferenceFixture = new \TYPO3\CMS\Extbase\Domain\Model\FileReference();
+        $this->subject->setLogo($fileReferenceFixture);
 
-		$this->assertAttributeEquals(
-			$fileReferenceFixture,
-			'logo',
-			$this->subject
-		);
-	}
+        $this->assertAttributeEquals(
+            $fileReferenceFixture,
+            'logo',
+            $this->subject
+        );
+    }
 }
