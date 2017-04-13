@@ -9,15 +9,11 @@
     {
       "type": "composer",
       "url": "https://composer.typo3.org/"
-    },
-    {
-      "type": "git",
-      "url": "https://git.typo3.org/TYPO3CMS/Extensions/static_info_tables.git"
     }
   ],
   "require": {
     "typo3/cms-core": ">=8.7.0,<8.9.99",
-    "sjbr/static-info-tables": "*"
+    "sjbr/static-info-tables": "6.4.3"
   },
   "require-dev": {
     "typo3/cms": ">=8.7.0,<8.9.99",
