@@ -25,7 +25,7 @@ namespace TNM\GolfCourses\Tests\Functional\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Core\Tests\FunctionalTestCase;
+use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 /**
  * Class GolfCourseTest

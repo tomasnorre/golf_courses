@@ -26,6 +26,8 @@ namespace TNM\GolfCourses\Tests\Unit\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+
 /**
  * Test case for class \TNM\GolfCourses\Domain\Model\GolfCourse.
  *
@@ -34,7 +36,7 @@ namespace TNM\GolfCourses\Tests\Unit\Domain\Model;
  *
  * @author Tomas Norre Mikkelsen <tomasnorre@gmail.com>
  */
-class GolfCourseTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
+class GolfCourseTest extends UnitTestCase
 {
     /**
      * @var \TNM\GolfCourses\Domain\Model\GolfCourse

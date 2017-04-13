@@ -26,8 +26,8 @@ namespace TNM\GolfCourses\Tests\Unit\Service;
  ***************************************************************/
 
 use TNM\GolfCourses\Service\ScoreService;
-use TYPO3\CMS\Core\Tests\UnitTestCase;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /**
  * Class ScoreServiceTest

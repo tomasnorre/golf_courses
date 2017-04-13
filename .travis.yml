@@ -1,13 +1,9 @@
 language: php
 
 php:
-  - 5.5
-  - 5.6
   - 7.0
-  - hhvm
 
 env:
-  - TYPO3_VERSION=^7.6 COVERAGE=0 FUNCTIONAL=0
   - TYPO3_VERSION=^8.7 COVERAGE=0 FUNCTIONAL=0
   - TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=0
 
@@ -15,19 +11,7 @@ matrix:
   exclude:
     - php: 5.5
       env: TYPO3_VERSION=^8.7 COVERAGE=0 FUNCTIONAL=0
-    - php: 5.6
-      env: TYPO3_VERSION=^8.7 COVERAGE=0 FUNCTIONAL=0
-    - php: hhvm
-      env: TYPO3_VERSION=^8.7 COVERAGE=0 FUNCTIONAL=0
-    - php: 5.5
-      env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=0
-    - php: 5.6
-      env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=0
-    - php: hhvm
-      env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=0
   include:
-    - php: 7.0
-      env: TYPO3_VERSION=^7.6 COVERAGE=1 FUNCTIONAL=1
     - php: 7.0
       env: TYPO3_VERSION=^8.7 COVERAGE=0 FUNCTIONAL=1
     - php: 7.0
@@ -35,8 +19,7 @@ matrix:
   allow_failures:
     - env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=1
     - env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=0
-    - env: TYPO3_VERSION=^8.7 COVERAGE=0 FUNCTIONAL=1
-    - env: TYPO3_VERSION=^8.7 COVERAGE=0 FUNCTIONAL=0
+
 notifications:
   email:
     recipients:
@@ -78,13 +61,13 @@ script:
     if [[ "$COVERAGE" == "0" ]]; then
       echo;
       echo "Running unit tests";
-      .Build/bin/phpunit --colors  -c $UNIT_XML Tests/Unit/
+      .Build/bin/phpunit --colors Tests/Unit/
     fi
   - >
     if [[ "$COVERAGE" == "1" ]]; then
       echo;
       echo "Running unit tests";
-      .Build/bin/phpunit --coverage-clover=unittest-coverage.clover --colors -c $UNIT_XML Tests/Unit/
+      .Build/bin/phpunit --coverage-clover=unittest-coverage.clover --colors Tests/Unit/
     fi
   - >
     if [[ "$FUNCTIONAL" == "1" ]]; then
