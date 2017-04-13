@@ -1,7 +1,6 @@
 <?php
 namespace TNM\GolfCourses\Domain\Model;
 
-
 /***************************************************************
  *
  *  Copyright notice
@@ -172,5 +171,4 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->logo = $logo;
     }
-
 }

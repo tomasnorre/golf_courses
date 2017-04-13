@@ -78,7 +78,8 @@ class GolfCourseRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
     /**
      * @return DatabaseConnection
      */
-    protected function getDatabaseConnection() {
+    protected function getDatabaseConnection()
+    {
         return $GLOBALS['TYPO3_DB'];
     }
 }

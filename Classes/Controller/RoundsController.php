@@ -59,7 +59,8 @@ class RoundsController extends ActionController
     /**
      * @return void
      */
-    public function listAction() {
+    public function listAction()
+    {
         $rounds = [];
         $golfRounds = $this->golfRoundRepository->findAll();
 

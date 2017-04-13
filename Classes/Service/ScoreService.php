@@ -26,5 +26,4 @@ class ScoreService
         }
         return $prefix . $score;
     }
-
 }

@@ -37,7 +37,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class Tcemain
 {
 
-    CONST GOLF_ROUND_TALBE = 'tx_golfcourses_domain_model_golfround';
+    const GOLF_ROUND_TALBE = 'tx_golfcourses_domain_model_golfround';
 
     /**
      * @var ScoreService
@@ -47,7 +47,8 @@ class Tcemain
     /**
      * Tcemain constructor.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->scoreService = GeneralUtility::makeInstance(ScoreService::class);
     }
 
@@ -69,6 +70,9 @@ class Tcemain
             return;
         }
 
-        $incomingFieldArray['score'] = $this->scoreService->calculateScoreToPar($incomingFieldArray['par'], $incomingFieldArray['strokes']);
+        $incomingFieldArray['score'] = $this->scoreService->calculateScoreToPar(
+            $incomingFieldArray['par'],
+            $incomingFieldArray['strokes']
+        );
     }
 }
