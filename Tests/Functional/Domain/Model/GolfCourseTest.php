@@ -34,6 +34,10 @@ use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 class GolfCourseTest extends FunctionalTestCase
 {
 
+    protected $testExtensionsToLoad = [
+        '.Build/Web/typo3conf/ext/golf_course'
+    ];
+
     /**
     * @test
     */

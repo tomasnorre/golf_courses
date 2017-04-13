@@ -17,6 +17,7 @@ matrix:
     - php: 7.0
       env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=1
   allow_failures:
+    - env: TYPO3_VERSION=^8.7 COVERAGE=0 FUNCTIONAL=1
     - env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=1
     - env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=0
 
@@ -61,13 +62,13 @@ script:
     if [[ "$COVERAGE" == "0" ]]; then
       echo;
       echo "Running unit tests";
-      .Build/bin/phpunit --colors Tests/Unit/
+      .Build/bin/phpunit --colors -c $UNIT_XML Tests/Unit/
     fi
   - >
     if [[ "$COVERAGE" == "1" ]]; then
       echo;
       echo "Running unit tests";
-      .Build/bin/phpunit --coverage-clover=unittest-coverage.clover --colors Tests/Unit/
+      .Build/bin/phpunit --coverage-clover=unittest-coverage.clover --colors -c $UNIT_XML Tests/Unit/
     fi
   - >
     if [[ "$FUNCTIONAL" == "1" ]]; then
