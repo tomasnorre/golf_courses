@@ -50,9 +50,6 @@ addons:
   apt:
     packages:
       - parallel
-      - libxml2-utils
-      - nodejs
-      - npm
 cache:
   directories:
     - $HOME/.composer/cache
