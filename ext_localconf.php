@@ -28,3 +28,9 @@ defined('TYPO3_MODE') or die();
 
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][$_EXTKEY] =
     \TNM\GolfCourses\Hook\Tcemain::class;
+
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TNM\GolfCourses\Task\GolfCoursesCoordinatesTask::class] = array(
+    'extension' => $_EXTKEY,
+    'title' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_db.xlf:tx_golfcourses_task_coordinates.name',
+    'description' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_db.xlf:tx_golfcourses_task_coordinates.description',
+);

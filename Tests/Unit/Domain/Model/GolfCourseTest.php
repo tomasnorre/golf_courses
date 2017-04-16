@@ -185,7 +185,7 @@ class GolfCourseTest extends UnitTestCase
     public function getLongitudeReturnsInitialValueForFloat()
     {
         $this->assertSame(
-            0.0,
+            '',
             $this->subject->getLongitude()
         );
     }
@@ -195,10 +195,10 @@ class GolfCourseTest extends UnitTestCase
      */
     public function setLongitude()
     {
-        $this->subject->setLongitude(9.6125169);
+        $this->subject->setLongitude('9.6125169');
 
         $this->assertAttributeEquals(
-            9.6125169000,
+            '9.6125169',
             'longitude',
             $this->subject
         );
@@ -210,7 +210,7 @@ class GolfCourseTest extends UnitTestCase
     public function getLatitudeReturnsInitialValueForFloat()
     {
         $this->assertSame(
-            0.0,
+            '',
             $this->subject->getLatitude()
         );
     }
@@ -220,10 +220,10 @@ class GolfCourseTest extends UnitTestCase
      */
     public function setLatitude()
     {
-        $this->subject->setLatitude(57.232696);
+        $this->subject->setLatitude('57.232696');
 
         $this->assertAttributeEquals(
-            57.2326960000,
+            '57.232696',
             'latitude',
             $this->subject
         );

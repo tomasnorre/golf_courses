@@ -27,6 +27,9 @@ namespace TNM\GolfCourses\Domain\Repository;
  ***************************************************************/
 
 use TYPO3\CMS\Core\Database\DatabaseConnection;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
+use TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /**
@@ -73,6 +76,37 @@ class GolfCourseRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         }
 
         return $uids;
+    }
+
+    /**
+     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findCountriesWithOutCoordinates()
+    {
+        /** @var QueryInterface $query */
+        $query = $this->createQuery();
+        $query->setLimit(5);
+
+        $querySettings = $query->getQuerySettings();
+        $querySettings->setRespectStoragePage(false);
+        $querySettings->setIgnoreEnableFields(false);
+
+        $query->matching($query->equals('longitude', ''));
+        $query->matching($query->equals('latitude', ''));
+        $query->setQuerySettings($querySettings);
+
+        return $query->execute();
+    }
+
+    /**
+     * Persist All
+     */
+    public function persistAll()
+    {
+        /** @var PersistenceManager $persistenceManager */
+        $persistenceManager = GeneralUtility::makeInstance(PersistenceManager::class);
+        $persistenceManager->persistAll();
+
     }
 
     /**

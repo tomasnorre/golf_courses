@@ -68,14 +68,14 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $logo = null;
 
     /**
-     * @var float
+     * @var string
      */
-    protected $longitude = 0.0;
+    protected $longitude = '';
 
     /**
-     * @var float
+     * @var string
      */
-    protected $latitude = 0.0;
+    protected $latitude = '';
 
     /**
      * Returns the name
@@ -183,7 +183,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getLongitude()
     {
@@ -191,7 +191,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param float $longitude
+     * @param string $longitude
      */
     public function setLongitude($longitude)
     {
@@ -199,7 +199,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getLatitude()
     {
@@ -207,7 +207,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param float $latitude
+     * @param string $latitude
      */
     public function setLatitude($latitude)
     {

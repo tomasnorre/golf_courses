@@ -11,8 +11,8 @@ CREATE TABLE tx_golfcourses_domain_model_golfcourse (
 	comment varchar(255) DEFAULT '' NOT NULL,
 	country int(11) DEFAULT '0' NOT NULL,
 	logo int(11) unsigned NOT NULL default '0',
-	longitude decimal(24,10) DEFAULT '0.0000000000',
-	latitude decimal(24,10) DEFAULT '0.0000000000',
+	longitude varchar(25) DEFAULT '' NOT NULL,
+	latitude varchar(25) DEFAULT '' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
 	crdate int(11) unsigned DEFAULT '0' NOT NULL,

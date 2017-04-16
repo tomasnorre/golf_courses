@@ -3,6 +3,14 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2016-08-04T18:38:20Z" product-name="golf_courses">
 		<header/>
 		<body>
+			<!-- Plugin -->
+			<trans-unit id="tx_golfcourses_task_coordinates.name">
+				<source>Get Coordinates for golf courses</source>
+			</trans-unit>
+			<trans-unit id="tx_golfcourses_task_coordinates.description">
+				<source>Fetching coordinates from google</source>
+			</trans-unit>
+
 			<!-- Golf Course -->
 			<trans-unit id="tx_golfcourses_domain_model_golfcourse">
 				<source>Golf Course</source>
