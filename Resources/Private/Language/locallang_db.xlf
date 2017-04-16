@@ -22,6 +22,12 @@
 			<trans-unit id="tx_golfcourses_domain_model_golfcourse.logo">
 				<source>Logo</source>
 			</trans-unit>
+			<trans-unit id="tx_golfcourses_domain_model_golfcourse.longitude">
+				<source>Longitude</source>
+			</trans-unit>
+			<trans-unit id="tx_golfcourses_domain_model_golfcourse.latitude">
+				<source>Latitude</source>
+			</trans-unit>
 
 			<!-- Golf Round -->
 			<trans-unit id="tx_golfcourses_domain_model_golfround">

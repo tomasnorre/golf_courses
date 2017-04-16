@@ -178,4 +178,54 @@ class GolfCourseTest extends UnitTestCase
             $this->subject
         );
     }
+
+    /**
+     * @test
+     */
+    public function getLongitudeReturnsInitialValueForFloat()
+    {
+        $this->assertSame(
+            0.0,
+            $this->subject->getLongitude()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setLongitude()
+    {
+        $this->subject->setLongitude(9.6125169);
+
+        $this->assertAttributeEquals(
+            9.6125169000,
+            'longitude',
+            $this->subject
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function getLatitudeReturnsInitialValueForFloat()
+    {
+        $this->assertSame(
+            0.0,
+            $this->subject->getLatitude()
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function setLatitude()
+    {
+        $this->subject->setLatitude(57.232696);
+
+        $this->assertAttributeEquals(
+            57.2326960000,
+            'latitude',
+            $this->subject
+        );
+    }
 }

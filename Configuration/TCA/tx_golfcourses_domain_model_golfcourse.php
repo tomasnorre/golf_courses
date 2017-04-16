@@ -23,10 +23,10 @@ return [
         'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('golf_courses') . 'Resources/Public/Icons/tx_golfcourses_domain_model_golfcourse.png'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, website, comment, country, logo',
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, name, website, comment, country, logo, longitude, latitude',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, website, comment, country, logo, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, name, website, comment, country, logo, longitude, latitude, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'palettes' => [
         '1' => ['showitem' => ''],
@@ -201,6 +201,24 @@ return [
                 ],
                 $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
             ),
+        ],
+        'longitude' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:golf_courses/Resources/Private/Language/locallang_db.xlf:tx_golfcourses_domain_model_golfcourse.longitude',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
+        ],
+        'latitude' => [
+            'exclude' => 1,
+            'label' => 'LLL:EXT:golf_courses/Resources/Private/Language/locallang_db.xlf:tx_golfcourses_domain_model_golfcourse.latitude',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
+            ],
         ],
 
     ],
