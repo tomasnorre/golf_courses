@@ -5,7 +5,7 @@ namespace TNM\GolfCourses\Controller;
  *
  *  Copyright notice
  *
- *  (c) 2016 Tomas Norre Mikkelsen <tomasnorre@gmail.com>
+ *  (c) 2017 Tomas Norre Mikkelsen <tomasnorre@gmail.com>
  *
  *  All rights reserved
  *

@@ -15,6 +15,18 @@ defined('TYPO3_MODE') or die();
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     'TNM.' . $_EXTKEY,
+    'GolfCoursesJson',
+    [
+        'Json' => 'list',
+    ],
+    // non-cacheable actions
+    [
+        'Json' => 'list',
+    ]
+);
+
+\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    'TNM.' . $_EXTKEY,
     'GolfRounds',
     [
         'Rounds' => 'list',

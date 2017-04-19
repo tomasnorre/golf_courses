@@ -31,11 +31,12 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
 use TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * The repository for GolfCourses
  */
-class GolfCourseRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class GolfCourseRepository extends Repository
 {
 
     /**
@@ -93,6 +94,21 @@ class GolfCourseRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 
         $query->matching($query->equals('longitude', ''));
         $query->matching($query->equals('latitude', ''));
+        $query->setQuerySettings($querySettings);
+
+        return $query->execute();
+    }
+
+    /**
+     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findAllActive()
+    {
+        $query = $this->createQuery();
+
+        $querySettings = $query->getQuerySettings();
+        $querySettings->setRespectStoragePage(false);
+        $querySettings->setIgnoreEnableFields(true);
         $query->setQuerySettings($querySettings);
 
         return $query->execute();
