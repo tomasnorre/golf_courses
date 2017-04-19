@@ -62,6 +62,8 @@ class JsonController extends ActionController
     {
         $golfCourses = $this->golfCourseRepository->findAllActive();
 
+        $golfCourses = [['golfCourses' => $golfCourses]];
+
         $this->view->setVariablesToRender(['view']);
         $this->view->assign('view', $golfCourses);
     }

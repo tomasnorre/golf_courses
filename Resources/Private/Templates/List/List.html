@@ -6,6 +6,50 @@
 <div class="golfCourses">
 
 	<p>I have played {coursesCount} courses in total, in {countriesCount} countries. The complete list can be seen below.</p>
+	<!--
+	TODO:
+		- Process complete sources list
+		- Auto zoom, include all markers
+	-->
+	<div id="map"></div>
+	<script>
+		var map;
+
+		function initMap() {
+			var frankfurt = {lat: 50.1211277, lng: 8.4964798};
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: frankfurt,
+				zoom: 4
+			});
+		}
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$.getJSON('http://fritdrop.local/?type=1492427013', function (json1) {
+			$.each(json1, function (key, data) {
+				$.each(data.golfCourses, function (unique, record) {
+					var latLng = new google.maps.LatLng(record.latitude, record.longitude);
+					// Creating a marker and putting it on the map
+					var marker = new google.maps.Marker({
+						position: latLng,
+						map: map
+					});
+
+					var infowindow = new google.maps.InfoWindow({
+						content: record.name
+					});
+
+					marker.addListener('click', function() {
+						infowindow.open(map, marker);
+					});
+				});
+			});
+		});
+	</script>
+	<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnDfWLl8PwWPgnetLRQdmgu4lDKbS1wdI&callback=initMap">
+	</script>
+
 
 	<f:for each="{countryAndCourses}" as="country">
 		<h3>{country.name} ({country.coursesPlayed})</h3>
