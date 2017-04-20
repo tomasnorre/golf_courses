@@ -1,0 +1,6 @@
+# cat=basic//10; type=string; label= Google Maps API Key
+apiKey=
+
+# cat=basic//10; type=int [0-100]; label= Scheduler getCoordinates limit
+schedulerProcessLimit = 10
+

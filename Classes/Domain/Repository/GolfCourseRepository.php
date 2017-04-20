@@ -80,13 +80,15 @@ class GolfCourseRepository extends Repository
     }
 
     /**
+     * @param int $limit
+     *
      * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */
-    public function findCountriesWithOutCoordinates()
+    public function findCountriesWithOutCoordinates(int $limit = 10)
     {
         /** @var QueryInterface $query */
         $query = $this->createQuery();
-        $query->setLimit(5);
+        $query->setLimit($limit);
 
         $querySettings = $query->getQuerySettings();
         $querySettings->setRespectStoragePage(false);
