@@ -1,4 +1,5 @@
 var map;
+var iconBase = '/typo3conf/ext/golf_courses/Resources/Public/Icons/';
 
 function initMap() {
     var frankfurt = {lat: 50.1211277, lng: 8.4964798};
@@ -9,18 +10,19 @@ function initMap() {
 }
 
 // Process JSON
-$.getJSON('/?type=1492427013', function (json1) {
-    $.each(json1, function (key, data) {
-        $.each(data.golfCourses, function (unique, record) {
-            var latLng = new google.maps.LatLng(record.latitude, record.longitude);
+$.getJSON('/?type=1492427013', function (golfCourses) {
+    $.each(golfCourses, function (key, data) {
+        $.each(data.golfCourses, function (unique, course) {
+            var latLng = new google.maps.LatLng(course.latitude, course.longitude);
             // Creating a marker and putting it on the map
             var marker = new google.maps.Marker({
                 position: latLng,
-                map: map
+                map: map,
+                icon: iconBase + 'map-marker.png'
             });
 
             var infowindow = new google.maps.InfoWindow({
-                content: record.name
+                content: course.name
             });
 
             marker.addListener('click', function() {
