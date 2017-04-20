@@ -25,7 +25,7 @@
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script type="text/javascript">
-		$.getJSON('http://fritdrop.local/?type=1492427013', function (json1) {
+		$.getJSON('/?type=1492427013', function (json1) {
 			$.each(json1, function (key, data) {
 				$.each(data.golfCourses, function (unique, record) {
 					var latLng = new google.maps.LatLng(record.latitude, record.longitude);
