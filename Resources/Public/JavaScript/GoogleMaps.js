@@ -21,13 +21,18 @@ $.getJSON('/?type=1492427013', function (golfCourses) {
                 icon: iconBase + 'map-marker.png'
             });
 
-            var infowindow = new google.maps.InfoWindow({
+            var infoWindow = new google.maps.InfoWindow({
                 content: course.name
             });
 
             marker.addListener('click', function() {
-                infowindow.open(map, marker);
+                infoWindow.open(map, marker);
+            });
+
+            google.maps.event.addListener(map, 'click', function() {
+                infoWindow.close();
             });
         });
     });
 });
+
