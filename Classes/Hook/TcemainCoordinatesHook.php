@@ -25,35 +25,21 @@ namespace TNM\GolfCourses\Hook;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TNM\GolfCourses\Service\ScoreService;
+use TNM\GolfCourses\Service\GoogleCoordinatesService;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * Class Tcemain
+ * Class TcemainCoordinatesHook
  *
  * @package TNM\GolfCourses\Hook
  */
-class Tcemain
+class TcemainCoordinatesHook
 {
 
-    const GOLF_ROUND_TALBE = 'tx_golfcourses_domain_model_golfround';
+    const GOLF_COURSE_TALBE = 'tx_golfcourses_domain_model_golfcourse';
 
     /**
-     * @var ScoreService
-     */
-    protected $scoreService;
-
-    /**
-     * Tcemain constructor.
-     */
-    public function __construct()
-    {
-        $this->scoreService = GeneralUtility::makeInstance(ScoreService::class);
-    }
-
-    /**
-     * Adds realurl path uid if exists.
      *
      * @param array $incomingFieldArray
      * @param string $table
@@ -63,16 +49,13 @@ class Tcemain
      */
     public function processDatamap_preProcessFieldArray(&$incomingFieldArray, $table, $id, DataHandler $dataHandler)
     {
-        if (static::GOLF_ROUND_TALBE !== $table
-            || isset($incomingFieldArray['par'])
-            || isset($incomingFieldArray['strokes'])
-        ) {
+        if (static::GOLF_COURSE_TALBE !== $table) {
             return;
         }
 
-        $incomingFieldArray['score'] = $this->scoreService->calculateScoreToPar(
-            $incomingFieldArray['par'],
-            $incomingFieldArray['strokes']
-        );
+        $coordinates = GoogleCoordinatesService::getCoordinates($incomingFieldArray['name']);
+
+        $incomingFieldArray['latitude'] = (string) $coordinates['latitude'];
+        $incomingFieldArray['longitude'] = (string) $coordinates['longitude'];
     }
 }
