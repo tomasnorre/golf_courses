@@ -45,9 +45,8 @@ class GoogleCoordinatesService
             return [];
         }
 
-        // replace all the white space with "+" sign to match with google search pattern
+        $address = urlencode($address);
         $address = str_replace(' ', '+', $address);
-
         $url = 'http://maps.google.com/maps/api/geocode/json?sensor=false&address=' . $address;
 
         $response = file_get_contents($url);
