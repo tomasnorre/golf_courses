@@ -57,7 +57,7 @@ class GolfCoursesCoordinatesTask extends AbstractTask
         $golfCoursesWithOutCoordinates = $this->golfCourseRepository->findCountriesWithOutCoordinates($limit);
         /** @var GolfCourse $golfCourse */
         foreach ($golfCoursesWithOutCoordinates as $golfCourse) {
-            $coordinates = GoogleCoordinatesService::getCoordinates($golfCourse->getName());
+            $coordinates = GoogleCoordinatesService::getCoordinates($golfCourse->getName() . ' ' . $golfCourse->getCountryShortEnName());
             if (!empty($coordinates)) {
                 $golfCourse->setLatitude((string) $coordinates['latitude']);
                 $golfCourse->setLongitude((string) $coordinates['longitude']);

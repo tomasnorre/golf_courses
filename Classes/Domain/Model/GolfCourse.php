@@ -25,6 +25,7 @@ namespace TNM\GolfCourses\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+use SJBR\StaticInfoTables\Domain\Model\Country;
 
 /**
  * GolfCourse
@@ -76,6 +77,12 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      */
     protected $latitude = '';
+
+    /**
+     * @var \SJBR\StaticInfoTables\Domain\Repository\CountryRepository
+     * @inject
+     */
+    protected $countryRepository;
 
     /**
      * Returns the name
@@ -160,7 +167,18 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->country = $country;
     }
-    
+
+    /**
+     * @return string
+     */
+    public function getCountryShortEnName()
+    {
+        /** @var Country $country */
+        $country = $this->countryRepository->findByUid($this->country);
+
+        return $country->getShortNameEn();
+    }
+
     /**
      * Returns the logo
      *
