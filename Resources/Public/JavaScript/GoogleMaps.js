@@ -21,8 +21,10 @@ $.getJSON('/?type=1492427013', function (golfCourses) {
                 icon: iconBase + 'map-marker.png'
             });
 
+            var htmlContent = '<h6>' + course.name + '</h6><a href="' + course.website +'">' + course.website + '</a>';
+
             var infoWindow = new google.maps.InfoWindow({
-                content: course.name
+                content: htmlContent
             });
 
             marker.addListener('click', function() {
