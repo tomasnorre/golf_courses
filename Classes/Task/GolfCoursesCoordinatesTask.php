@@ -28,9 +28,8 @@ namespace TNM\GolfCourses\Task;
 use TNM\GolfCourses\Domain\Model\GolfCourse;
 use TNM\GolfCourses\Domain\Repository\GolfCourseRepository;
 use TNM\GolfCourses\Service\GoogleCoordinatesService;
-use TNM\GolfCourses\Utility\ExtensionSettingsUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
+
 use TYPO3\CMS\Scheduler\Task\AbstractTask;
 
 /**
@@ -46,6 +45,12 @@ class GolfCoursesCoordinatesTask extends AbstractTask
     protected $golfCourseRepository;
 
     /**
+     * @var \TNM\GolfCourses\Service\ExtensionSettingsService;
+     * @inject
+     */
+    protected $extensionSettingsService = null;
+
+    /**
      *
      */
     public function execute()
@@ -53,7 +58,7 @@ class GolfCoursesCoordinatesTask extends AbstractTask
         $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
         $this->golfCourseRepository = $objectManager->get(GolfCourseRepository::class);
 
-        $limit = ExtensionSettingsUtility::getSetting('schedulerProcessLimit');
+        $limit = $this->extensionSettingsService->getSetting('schedulerProcessLimit');
         $golfCoursesWithOutCoordinates = $this->golfCourseRepository->findCountriesWithOutCoordinates($limit);
         /** @var GolfCourse $golfCourse */
         foreach ($golfCoursesWithOutCoordinates as $golfCourse) {

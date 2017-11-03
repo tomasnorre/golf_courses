@@ -28,7 +28,6 @@ namespace TNM\GolfCourses\Controller;
 
 use SJBR\StaticInfoTables\Domain\Model\Country;
 use TNM\GolfCourses\Domain\Model\GolfCourse;
-use TNM\GolfCourses\Utility\ExtensionSettingsUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -50,6 +49,12 @@ class ListController extends ActionController
      * @inject
      */
     protected $countryRepository = null;
+
+    /**
+     * @var \TNM\GolfCourses\Service\ExtensionSettingsService;
+     * @inject
+     */
+    protected $extensionSettingsService = null;
     
     /**
      * action list
@@ -80,7 +85,7 @@ class ListController extends ActionController
             $countryAndCourses[$countryName]['coursesPlayed'] = $coursesInCountry->count();
         }
 
-        $this->view->assign('mapsApiKey', ExtensionSettingsUtility::getSetting('apiKey'));
+        $this->view->assign('mapsApiKey', $this->extensionSettingsService->getSetting('apiKey'));
         $this->view->assign('countryAndCourses', $countryAndCourses);
         $this->view->assign('coursesCount', $coursesTotal);
         $this->view->assign('countriesCount', count($countryAndCourses));

@@ -1,10 +1,10 @@
 <?php
-namespace TNM\GolfCourses\Utility;
+namespace TNM\GolfCourses\Service;
 
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2017 Tomas Norre Mikkelsen <tomasnorre@gmail.com>
+ *  (c) 3 Nov 2017 Tomas Norre Mikkelsen <tomasnorre@gmail.com>
  *
  *  All rights reserved
  *
@@ -25,22 +25,29 @@ namespace TNM\GolfCourses\Utility;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TYPO3\CMS\Extensionmanager\Utility\ConfigurationUtility;
+
 /**
- * Class ExtensionSettingsUtility
+ * Class ExtensionSettingsService
  *
- * @package TNM\GolfCourses\Utility
+ * @package TNM\GolfCourses\Service
  */
-class ExtensionSettingsUtility
+class ExtensionSettingsService
 {
+    /**
+     * @var \TYPO3\CMS\Extbase\Object\ObjectManager
+     * @inject
+     */
+    protected $objectManager;
 
     /**
      * @param $settingKey
      *
      * @return string
      */
-    public static function getSetting($settingKey)
+    public function getSetting($settingKey)
     {
-        $extensionSetting = self::getAllSettings();
+        $extensionSetting = $this->getAllSettings();
         if ( key_exists($settingKey, $extensionSetting)) {
             return $extensionSetting[$settingKey];
         }
@@ -51,8 +58,10 @@ class ExtensionSettingsUtility
     /**
      * @return array
      */
-    private static function getAllSettings()
+    private function getAllSettings()
     {
-        return unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['golf_courses']);
+        /** @var ConfigurationUtility $configurationUtility */
+        $configurationUtility = $this->objectManager->get(ConfigurationUtility::class);
+        return $configurationUtility->getCurrentConfiguration('golf_courses');
     }
 }
