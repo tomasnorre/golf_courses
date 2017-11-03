@@ -51,7 +51,7 @@ class ExtensionSettingsUtility
     /**
      * @return array
      */
-    private function getAllSettings()
+    private static function getAllSettings()
     {
         return unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['golf_courses']);
     }
