@@ -4,7 +4,7 @@ namespace TNM\GolfCourses\Service;
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 3 Nov 2017 Tomas Norre Mikkelsen <tomasnorre@gmail.com>
+ *  (c) 2017 Tomas Norre Mikkelsen <tomasnorre@gmail.com>
  *
  *  All rights reserved
  *
@@ -58,7 +58,7 @@ class ExtensionSettingsService
     /**
      * @return array
      */
-    private function getAllSettings()
+    public function getAllSettings()
     {
         /** @var ConfigurationUtility $configurationUtility */
         $configurationUtility = $this->objectManager->get(ConfigurationUtility::class);
