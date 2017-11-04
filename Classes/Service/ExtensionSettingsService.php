@@ -48,7 +48,7 @@ class ExtensionSettingsService
     public function getSetting($settingKey)
     {
         $extensionSetting = $this->getAllSettings();
-        if ( key_exists($settingKey, $extensionSetting)) {
+        if (key_exists($settingKey, $extensionSetting)) {
             return $extensionSetting[$settingKey];
         }
 
