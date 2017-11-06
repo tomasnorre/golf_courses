@@ -25,6 +25,7 @@ namespace TNM\GolfCourses\Tests\Functional\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TNM\GolfCourses\Domain\Model\GolfCourse;
 use TNM\GolfCourses\Domain\Repository\GolfCourseRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
@@ -75,11 +76,59 @@ class GolfCourseRepositoryTest extends FunctionalTestCase
     /**
      * @test
      */
-    public function findCountriesUidsInUse()
+    public function findCountriesUidsInUseTest()
     {
         $this->assertEquals(
             [1,2,4],
             array_values($this->subject->findCountriesUidsInUse())
         );
+    }
+
+    /**
+     * @test
+     */
+    public function findAllInCountryTest()
+    {
+        $expectedCoursesUid = [1, 2];
+        $actualCoursesUid = [];
+
+        $actualCourses = $this->subject->findAllInCountry(1);
+        /** @var GolfCourse $course */
+        foreach ($actualCourses as $course){
+            array_push($actualCoursesUid, $course->getUid());
+        }
+
+        $this->assertEquals(
+            $expectedCoursesUid,
+            $actualCoursesUid
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function findCountriesWithOutCoordinatesTest()
+    {
+        $expectedCoursesUid = [4];
+        $actualCoursesUid = [];
+
+        $actualCourses = $this->subject->findCountriesWithOutCoordinates(10);
+        /** @var GolfCourse $course */
+        foreach ($actualCourses as $course){
+            array_push($actualCoursesUid, $course->getUid());
+        }
+
+        $this->assertEquals(
+            $expectedCoursesUid,
+            $actualCoursesUid
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function findAllActiveTest()
+    {
+        $this->markTestSkipped('Please implement test');
     }
 }

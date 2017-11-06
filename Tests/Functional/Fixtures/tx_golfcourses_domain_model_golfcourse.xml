@@ -5,23 +5,41 @@
 		<pid>1</pid>
 		<name>1st Course - Country 1</name>
 		<country>1</country>
+		<longitude>51</longitude>
+		<latitude>9</latitude>
 	</tx_golfcourses_domain_model_golfcourse>
 	<tx_golfcourses_domain_model_golfcourse>
 		<uid>2</uid>
 		<pid>1</pid>
 		<name>2nd Course - Country 1</name>
 		<country>1</country>
+		<longitude>51</longitude>
+		<latitude>9</latitude>
 	</tx_golfcourses_domain_model_golfcourse>
 	<tx_golfcourses_domain_model_golfcourse>
 		<uid>3</uid>
 		<pid>1</pid>
-		<name>3rd Course - Country 2</name>
+		<name>3rd Course - Country 2 - Hidden</name>
 		<country>2</country>
+		<longitude>51</longitude>
+		<latitude>9</latitude>
+		<hidden>1</hidden>
 	</tx_golfcourses_domain_model_golfcourse>
 	<tx_golfcourses_domain_model_golfcourse>
 		<uid>4</uid>
 		<pid>1</pid>
 		<name>4th Course - Country 4</name>
 		<country>4</country>
+		<longitude></longitude>
+		<latitude></latitude>
+	</tx_golfcourses_domain_model_golfcourse>
+	<tx_golfcourses_domain_model_golfcourse>
+		<uid>5</uid>
+		<pid>1</pid>
+		<name>5th Course - Country 4</name>
+		<country>4</country>
+		<longitude></longitude>
+		<latitude></latitude>
+		<deleted>1</deleted>
 	</tx_golfcourses_domain_model_golfcourse>
 </dataset>
