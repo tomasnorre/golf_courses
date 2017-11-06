@@ -35,7 +35,7 @@ class GolfCourseTest extends FunctionalTestCase
 {
 
     protected $testExtensionsToLoad = [
-        '.Build/Web/typo3conf/ext/golf_course'
+        'typo3conf/ext/golf_courses'
     ];
 
     /**
