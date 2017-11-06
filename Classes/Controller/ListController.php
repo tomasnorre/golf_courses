@@ -51,7 +51,7 @@ class ListController extends ActionController
     protected $countryRepository = null;
 
     /**
-     * @var \TNM\GolfCourses\Service\ExtensionSettingsService;
+     * @var \TNM\GolfCourses\Service\ExtensionSettingsService
      * @inject
      */
     protected $extensionSettingsService = null;

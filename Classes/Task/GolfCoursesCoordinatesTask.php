@@ -45,7 +45,7 @@ class GolfCoursesCoordinatesTask extends AbstractTask
     protected $golfCourseRepository;
 
     /**
-     * @var \TNM\GolfCourses\Service\ExtensionSettingsService;
+     * @var \TNM\GolfCourses\Service\ExtensionSettingsService
      * @inject
      */
     protected $extensionSettingsService = null;
