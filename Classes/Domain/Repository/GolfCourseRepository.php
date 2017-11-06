@@ -26,6 +26,7 @@ namespace TNM\GolfCourses\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use TNM\GolfCourses\Domain\Model\GolfCourse;
 use TYPO3\CMS\Core\Database\DatabaseConnection;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
@@ -66,17 +67,14 @@ class GolfCourseRepository extends Repository
     public function findCountriesUidsInUse()
     {
         $uids = [];
-        $courses = $this->getDatabaseConnection()->exec_SELECTquery(
-            'DISTINCT country',
-            'tx_golfcourses_domain_model_golfcourse',
-            ''
-        );
 
+        $courses = $this->findAllActive();
+        /** @var GolfCourse $course */
         foreach ($courses as $course) {
-            $uids[] = $course['country'];
+            array_push($uids, $course->getCountry());
         }
 
-        return $uids;
+        return array_unique($uids);
     }
 
     /**
@@ -125,13 +123,5 @@ class GolfCourseRepository extends Repository
         $persistenceManager = GeneralUtility::makeInstance(PersistenceManager::class);
         $persistenceManager->persistAll();
 
-    }
-
-    /**
-     * @return DatabaseConnection
-     */
-    protected function getDatabaseConnection()
-    {
-        return $GLOBALS['TYPO3_DB'];
     }
 }

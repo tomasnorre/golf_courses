@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dataset>
+	<tx_golfcourses_domain_model_golfcourse>
+		<uid>1</uid>
+		<pid>1</pid>
+		<name>1st Course - Country 1</name>
+		<country>1</country>
+	</tx_golfcourses_domain_model_golfcourse>
+	<tx_golfcourses_domain_model_golfcourse>
+		<uid>2</uid>
+		<pid>1</pid>
+		<name>2nd Course - Country 1</name>
+		<country>1</country>
+	</tx_golfcourses_domain_model_golfcourse>
+	<tx_golfcourses_domain_model_golfcourse>
+		<uid>3</uid>
+		<pid>1</pid>
+		<name>3rd Course - Country 2</name>
+		<country>2</country>
+	</tx_golfcourses_domain_model_golfcourse>
+	<tx_golfcourses_domain_model_golfcourse>
+		<uid>4</uid>
+		<pid>1</pid>
+		<name>4th Course - Country 4</name>
+		<country>4</country>
+	</tx_golfcourses_domain_model_golfcourse>
+</dataset>
