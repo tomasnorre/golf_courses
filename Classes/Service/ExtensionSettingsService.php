@@ -49,7 +49,7 @@ class ExtensionSettingsService
     {
         $extensionSetting = $this->getAllSettings();
         if (key_exists($settingKey, $extensionSetting)) {
-            return $extensionSetting[$settingKey];
+            return $extensionSetting[$settingKey]['value'];
         }
 
         return '';

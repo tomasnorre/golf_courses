@@ -47,8 +47,11 @@ class ExtensionSettingsServiceTest extends UnitTestCase
     public function setUp()
     {
         $settings = [
-            'api_key' => 'this-is-my-api-key-for-testing',
-            'extkey' => 'golf_course'
+            'api_key' => [
+                'value' => 'this-is-my-api-key-for-testing',
+            ],
+            'extkey' => [
+                'value' => 'golf_course']
         ];
 
         $this->subject = $this->getAccessibleMock(ExtensionSettingsService::class, ['getAllSettings'], [], '', false);
