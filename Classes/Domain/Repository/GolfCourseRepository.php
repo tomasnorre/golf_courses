@@ -106,9 +106,10 @@ class GolfCourseRepository extends Repository
     {
         $query = $this->createQuery();
 
+
         $querySettings = $query->getQuerySettings();
         $querySettings->setRespectStoragePage(false);
-        $querySettings->setIgnoreEnableFields(true);
+        $querySettings->setIgnoreEnableFields(false);
         $query->setQuerySettings($querySettings);
 
         return $query->execute();

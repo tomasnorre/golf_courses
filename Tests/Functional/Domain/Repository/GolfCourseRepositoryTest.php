@@ -129,6 +129,18 @@ class GolfCourseRepositoryTest extends FunctionalTestCase
      */
     public function findAllActiveTest()
     {
-        $this->markTestSkipped('Please implement test');
+        $expectedCoursesUid = [1, 2, 4];
+        $actualCoursesUid = [];
+
+        $actualCourses = $this->subject->findAllActive();
+        /** @var GolfCourse $course */
+        foreach ($actualCourses as $course){
+            array_push($actualCoursesUid, $course->getUid());
+        }
+
+        $this->assertEquals(
+            $expectedCoursesUid,
+            $actualCoursesUid
+        );
     }
 }
