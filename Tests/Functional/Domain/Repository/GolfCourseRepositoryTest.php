@@ -79,7 +79,7 @@ class GolfCourseRepositoryTest extends FunctionalTestCase
     public function findCountriesUidsInUseTest()
     {
         $this->assertEquals(
-            [1,2,4],
+            [1, 4],
             array_values($this->subject->findCountriesUidsInUse())
         );
     }
