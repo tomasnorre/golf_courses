@@ -40,7 +40,6 @@ class GoogleCoordinatesService
      */
     public static function getCoordinates($address)
     {
-
         if (empty($address)) {
             return [];
         }

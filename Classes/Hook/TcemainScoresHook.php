@@ -36,7 +36,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class TcemainScoresHook
 {
-
     const GOLF_ROUND_TALBE = 'tx_golfcourses_domain_model_golfround';
 
     /**

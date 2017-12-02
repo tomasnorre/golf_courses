@@ -36,7 +36,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class TcemainCoordinatesHook
 {
-
     const GOLF_COURSE_TALBE = 'tx_golfcourses_domain_model_golfcourse';
 
     /**

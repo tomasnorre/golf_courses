@@ -73,4 +73,3 @@ class GolfCoursesCoordinatesTask extends AbstractTask
         return true;
     }
 }
-

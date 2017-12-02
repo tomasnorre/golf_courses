@@ -94,7 +94,7 @@ class GolfCourseRepositoryTest extends FunctionalTestCase
 
         $actualCourses = $this->subject->findAllInCountry(1);
         /** @var GolfCourse $course */
-        foreach ($actualCourses as $course){
+        foreach ($actualCourses as $course) {
             array_push($actualCoursesUid, $course->getUid());
         }
 
@@ -114,7 +114,7 @@ class GolfCourseRepositoryTest extends FunctionalTestCase
 
         $actualCourses = $this->subject->findCountriesWithOutCoordinates(10);
         /** @var GolfCourse $course */
-        foreach ($actualCourses as $course){
+        foreach ($actualCourses as $course) {
             array_push($actualCoursesUid, $course->getUid());
         }
 
@@ -134,7 +134,7 @@ class GolfCourseRepositoryTest extends FunctionalTestCase
 
         $actualCourses = $this->subject->findAllActive();
         /** @var GolfCourse $course */
-        foreach ($actualCourses as $course){
+        foreach ($actualCourses as $course) {
             array_push($actualCoursesUid, $course->getUid());
         }
 

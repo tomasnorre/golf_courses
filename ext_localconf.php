@@ -45,8 +45,8 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['proc
 //    \TNM\GolfCourses\Hook\TcemainCoordinatesHook::class;
 
 
-$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TNM\GolfCourses\Task\GolfCoursesCoordinatesTask::class] = array(
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['scheduler']['tasks'][\TNM\GolfCourses\Task\GolfCoursesCoordinatesTask::class] = [
     'extension' => $_EXTKEY,
     'title' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_db.xlf:tx_golfcourses_task_coordinates.name',
     'description' => 'LLL:EXT:' . $_EXTKEY . '/Resources/Private/Language/locallang_db.xlf:tx_golfcourses_task_coordinates.description',
-);
+];

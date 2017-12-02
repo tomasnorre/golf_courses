@@ -63,7 +63,6 @@ class ListController extends ActionController
      */
     public function listAction()
     {
-
         $countryAndCourses = [];
         $coursesTotal = 0;
         $countriesUidsInUse = $this->golfCourseRepository->findCountriesUidsInUse();

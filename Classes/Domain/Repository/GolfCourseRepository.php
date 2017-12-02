@@ -122,6 +122,5 @@ class GolfCourseRepository extends Repository
         /** @var PersistenceManager $persistenceManager */
         $persistenceManager = GeneralUtility::makeInstance(PersistenceManager::class);
         $persistenceManager->persistAll();
-
     }
 }
