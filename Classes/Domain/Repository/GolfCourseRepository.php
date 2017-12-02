@@ -30,6 +30,7 @@ use TNM\GolfCourses\Domain\Model\GolfCourse;
 use TYPO3\CMS\Core\Database\DatabaseConnection;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\PersistenceManager;
+use TYPO3\CMS\Extbase\Persistence\Generic\Storage\Typo3DbQueryParser;
 use TYPO3\CMS\Extbase\Persistence\PersistenceManagerInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
@@ -52,7 +53,7 @@ class GolfCourseRepository extends Repository
 
         $querySettings = $query->getQuerySettings();
         $querySettings->setRespectStoragePage(false);
-        $querySettings->setIgnoreEnableFields(false);
+        $querySettings->setIgnoreEnableFields(true);
 
         $query->matching($query->equals('country', $countryUid));
         $query->setOrderings(['name' => 'ASC']);
@@ -112,6 +113,28 @@ class GolfCourseRepository extends Repository
         $query->setQuerySettings($querySettings);
 
         return $query->execute();
+    }
+
+    /**
+     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findAllFutureCourses()
+    {
+        $query = $this->createQuery();
+
+        $querySettings = $query->getQuerySettings();
+        $querySettings->setRespectStoragePage(false);
+        $querySettings->setIgnoreEnableFields(true);
+
+        $query->matching(
+            $query->logicalAnd(
+                $query->greaterThan('starttime', time()),
+                $query->equals('hidden', 0)
+            )
+        );
+
+        return $query->execute();
+
     }
 
     /**

@@ -36,6 +36,9 @@
 			<trans-unit id="tx_golfcourses_domain_model_golfcourse.latitude">
 				<source>Latitude</source>
 			</trans-unit>
+			<trans-unit id="tx_golfcourses_domain_model_golfcourse.dateToPlay">
+				<source>Date to play the course</source>
+			</trans-unit>
 
 			<!-- Golf Round -->
 			<trans-unit id="tx_golfcourses_domain_model_golfround">

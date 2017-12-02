@@ -60,9 +60,13 @@ class JsonController extends ActionController
      */
     public function listAction()
     {
-        $golfCourses = $this->golfCourseRepository->findAllActive();
+        $golfCoursesPlayed = $this->golfCourseRepository->findAllActive();
+        $golfCoursesFuture = $this->golfCourseRepository->findAllFutureCourses();
 
-        $golfCourses = [['golfCourses' => $golfCourses]];
+        $golfCourses = [
+            ['golfCoursesPlayed' => $golfCoursesPlayed],
+            ['golfCoursesFuture' => $golfCoursesFuture]
+        ];
 
         $this->view->setVariablesToRender(['view']);
         $this->view->assign('view', $golfCourses);

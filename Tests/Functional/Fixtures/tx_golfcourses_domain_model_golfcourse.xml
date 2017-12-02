@@ -42,4 +42,23 @@
 		<latitude></latitude>
 		<deleted>1</deleted>
 	</tx_golfcourses_domain_model_golfcourse>
+	<tx_golfcourses_domain_model_golfcourse>
+		<uid>6</uid>
+		<pid>1</pid>
+		<name>6th Course - Country 7</name>
+		<country>7</country>
+		<longitude></longitude>
+		<latitude></latitude>
+		<starttime>3787473600</starttime>
+	</tx_golfcourses_domain_model_golfcourse>
+	<tx_golfcourses_domain_model_golfcourse>
+		<uid>7</uid>
+		<pid>1</pid>
+		<name>7th Course - Country 4</name>
+		<country>4</country>
+		<longitude></longitude>
+		<latitude></latitude>
+		<starttime>3787473600</starttime>
+		<hidden>1</hidden>
+	</tx_golfcourses_domain_model_golfcourse>
 </dataset>

@@ -143,4 +143,24 @@ class GolfCourseRepositoryTest extends FunctionalTestCase
             $actualCoursesUid
         );
     }
+
+    /**
+     * @test
+     */
+    public function findAllFutureCoursesTest()
+    {
+        $expectedCoursesUid = [6];
+        $actualCoursesUid = [];
+
+        $actualCourses = $this->subject->findAllFutureCourses();
+        /** @var GolfCourse $course */
+        foreach ($actualCourses as $course){
+            array_push($actualCoursesUid, $course->getUid());
+        }
+
+        $this->assertEquals(
+            $expectedCoursesUid,
+            $actualCoursesUid
+        );
+    }
 }
