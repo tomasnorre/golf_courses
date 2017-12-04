@@ -39,28 +39,28 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      */
     protected $name = '';
-    
+
     /**
      * website
      *
      * @var string
      */
     protected $website = '';
-    
+
     /**
      * comment
      *
      * @var string
      */
     protected $comment = '';
-    
+
     /**
      * country
      *
      * @var int
      */
     protected $country = 0;
-    
+
     /**
      * logo
      *
@@ -93,7 +93,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->name;
     }
-    
+
     /**
      * Sets the name
      *
@@ -104,7 +104,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->name = $name;
     }
-    
+
     /**
      * Returns the website
      *
@@ -114,7 +114,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->website;
     }
-    
+
     /**
      * Sets the website
      *
@@ -125,7 +125,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->website = $website;
     }
-    
+
     /**
      * Returns the comment
      *
@@ -135,7 +135,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->comment;
     }
-    
+
     /**
      * Sets the comment
      *
@@ -146,7 +146,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->comment = $comment;
     }
-    
+
     /**
      * Returns the country
      *
@@ -156,7 +156,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->country;
     }
-    
+
     /**
      * Sets the country
      *
@@ -188,7 +188,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->logo;
     }
-    
+
     /**
      * Sets the logo
      *

@@ -27,12 +27,10 @@ namespace TNM\GolfCourses\Hook;
 
 use TNM\GolfCourses\Service\GoogleCoordinatesService;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Class TcemainCoordinatesHook
  *
- * @package TNM\GolfCourses\Hook
  */
 class TcemainCoordinatesHook
 {

@@ -55,7 +55,7 @@ class ListController extends ActionController
      * @inject
      */
     protected $extensionSettingsService = null;
-    
+
     /**
      * action list
      *

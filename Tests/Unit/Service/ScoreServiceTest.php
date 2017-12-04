@@ -32,7 +32,6 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 /**
  * Class ScoreServiceTest
  *
- * @package TNM\GolfCourses\Tests\Unit\Service
  */
 class ScoreServiceTest extends UnitTestCase
 {

@@ -34,7 +34,6 @@ use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 /**
  * Class GolfCourseRepositoryTest
  *
- * @package TNM\GolfCourses\Tests\Functional\Domain\Repository
  */
 class GolfCourseRepositoryTest extends FunctionalTestCase
 {

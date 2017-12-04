@@ -31,7 +31,6 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 /**
  * Class ExtensionSettingsServiceTest
  *
- * @package TNM\GolfCourses\Tests\Unit\Service
  */
 class ExtensionSettingsServiceTest extends UnitTestCase
 {

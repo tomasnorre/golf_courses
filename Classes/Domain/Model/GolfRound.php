@@ -28,7 +28,6 @@ namespace TNM\GolfCourses\Domain\Model;
 /**
  * Class GolfRound
  *
- * @package TNM\GolfCourses\Domain\Model
  */
 class GolfRound extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
@@ -59,7 +58,7 @@ class GolfRound extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $score;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $regulation;
 
@@ -144,7 +143,7 @@ class GolfRound extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isRegulation()
     {
@@ -152,7 +151,7 @@ class GolfRound extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param boolean $regulation
+     * @param bool $regulation
      */
     public function setRegulation($regulation)
     {

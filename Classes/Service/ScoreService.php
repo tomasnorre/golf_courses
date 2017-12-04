@@ -4,7 +4,6 @@ namespace TNM\GolfCourses\Service;
 /**
  * Class ScoreService
  *
- * @package TNM\GolfCourses\Service
  */
 class ScoreService
 {

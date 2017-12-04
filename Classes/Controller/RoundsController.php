@@ -33,7 +33,6 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 /**
  * Class BestScoreController
  *
- * @package TNM\GolfCourses\Controller
  */
 class RoundsController extends ActionController
 {

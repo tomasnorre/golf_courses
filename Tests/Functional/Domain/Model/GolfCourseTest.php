@@ -29,7 +29,6 @@ use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 /**
  * Class GolfCourseTest
- * @package TNM\GolfCourses\Tests\Functional\Domain\Model
  */
 class GolfCourseTest extends FunctionalTestCase
 {

@@ -28,7 +28,6 @@ namespace TNM\GolfCourses\Domain\Repository;
 /**
  * Class GolfRoundRepository
  *
- * @package TNM\GolfCourses\Domain\Repository
  */
 class GolfRoundRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {

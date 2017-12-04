@@ -35,7 +35,6 @@ use TYPO3\CMS\Scheduler\Task\AbstractTask;
 /**
  * Class GolfCoursesCoordinatesTask
  *
- * @package TNM\GolfCourses\Task
  */
 class GolfCoursesCoordinatesTask extends AbstractTask
 {

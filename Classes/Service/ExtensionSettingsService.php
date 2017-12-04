@@ -30,7 +30,6 @@ use TYPO3\CMS\Extensionmanager\Utility\ConfigurationUtility;
 /**
  * Class ExtensionSettingsService
  *
- * @package TNM\GolfCourses\Service
  */
 class ExtensionSettingsService
 {
@@ -48,7 +47,7 @@ class ExtensionSettingsService
     public function getSetting($settingKey)
     {
         $extensionSetting = $this->getAllSettings();
-        if (key_exists($settingKey, $extensionSetting)) {
+        if (array_key_exists($settingKey, $extensionSetting)) {
             return $extensionSetting[$settingKey]['value'];
         }
 

@@ -28,7 +28,6 @@ namespace TNM\GolfCourses\Service;
 /**
  * Class GoogleCoordinatesService
  *
- * @package TNM\GolfCourses\Service
  */
 class GoogleCoordinatesService
 {
