@@ -4,8 +4,8 @@
 CREATE TABLE tx_golfcourses_domain_model_golfcourse (
 
 	uid int(11) NOT NULL auto_increment,
-	pid int(11) DEFAULT '0' NOT NULL,
 
+	pid int(11) DEFAULT '0' NOT NULL,
 	name varchar(255) DEFAULT '' NOT NULL,
 	website varchar(255) DEFAULT '' NOT NULL,
 	comment varchar(255) DEFAULT '' NOT NULL,

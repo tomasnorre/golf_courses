@@ -3,4 +3,3 @@ apiKey=
 
 # cat=basic//10; type=int [0-100]; label= Scheduler getCoordinates limit
 schedulerProcessLimit = 10
-

@@ -20,7 +20,7 @@ return [
             'endtime' => 'endtime',
         ],
         'searchFields' => 'date,course,par,strokes,score',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::siteRelPath('golf_courses') . 'Resources/Public/Icons/tx_golfcourses_domain_model_golfround.png'
+        'iconfile' => \TYPO3\CMS\Core\Utility\PathUtility::stripPathSitePrefix(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('golf_courses')) . 'Resources/Public/Icons/tx_golfcourses_domain_model_golfround.png'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, date, course, par, strokes, regulation, score',
