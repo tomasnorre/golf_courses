@@ -25,7 +25,7 @@ namespace TNM\GolfCourses\Service;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\CMS\Extensionmanager\Utility\ConfigurationUtility;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 
 /**
  * Class ExtensionSettingsService
@@ -46,21 +46,8 @@ class ExtensionSettingsService
      */
     public function getSetting($settingKey)
     {
-        $extensionSetting = $this->getAllSettings();
-        if (array_key_exists($settingKey, $extensionSetting)) {
-            return $extensionSetting[$settingKey]['value'];
-        }
-
-        return '';
-    }
-
-    /**
-     * @return array
-     */
-    public function getAllSettings()
-    {
-        /** @var ConfigurationUtility $configurationUtility */
-        $configurationUtility = $this->objectManager->get(ConfigurationUtility::class);
-        return $configurationUtility->getCurrentConfiguration('golf_courses');
+        /** @var ExtensionConfiguration $extensionConfiguration */
+        $extensionConfiguration = $this->objectManager->get(ExtensionConfiguration::class);
+        return $extensionConfiguration->get('golf_courses', $settingKey);
     }
 }
