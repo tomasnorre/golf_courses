@@ -3,6 +3,7 @@ language: php
 php:
   - 7.0
   - 7.1
+  - 7.2
 
 env:
   - TYPO3_VERSION=^8.7 COVERAGE=0 FUNCTIONAL=0
@@ -10,11 +11,15 @@ env:
 
 matrix:
   include:
-    - php: 7.0
+    - php: 7.2
       env: TYPO3_VERSION=^8.7 COVERAGE=0 FUNCTIONAL=1
-    - php: 7.0
+    - php: 7.2
       env: TYPO3_VERSION=^8.7 COVERAGE=1 FUNCTIONAL=1
-    - php: 7.0
+    - php: 7.2
+      env: TYPO3_VERSION=^9.5 COVERAGE=0 FUNCTIONAL=0
+    - php: 7.2
+      env: TYPO3_VERSION=^9.5 COVERAGE=0 FUNCTIONAL=1
+    - php: 7.2
       env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=1
   allow_failures:
     - env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=1
@@ -43,7 +48,7 @@ before_install:
 
 before_script:
   # Installs TYPO3
-  - composer require typo3/cms=$TYPO3_VERSION
+  - composer require typo3/cms-core=$TYPO3_VERSION
   # Restore composer.json
   - git checkout composer.json
   - export "TYPO3_PATH_WEB"=$PWD/.Build/Web;
