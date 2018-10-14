@@ -1,5 +1,5 @@
 <?php
-namespace TNM\GolfCourses\Tests\Unit\Service;
+namespace TNM\GolfCourses\Tests\Functional\Service;
 
 /***************************************************************
  *  Copyright notice
@@ -26,16 +26,19 @@ namespace TNM\GolfCourses\Tests\Unit\Service;
  ***************************************************************/
 
 use TNM\GolfCourses\Service\ExtensionSettingsService;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
-use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 /**
  * Class ExtensionSettingsServiceTest
- *
  */
-class ExtensionSettingsServiceTest extends UnitTestCase
+class ExtensionSettingsServiceTest extends FunctionalTestCase
 {
+
+    protected $testExtensionsToLoad = [
+        'typo3conf/ext/golf_courses'
+    ];
 
     /**
      * @var ExtensionSettingsService
@@ -47,9 +50,11 @@ class ExtensionSettingsServiceTest extends UnitTestCase
      */
     public function setUp()
     {
-        /** @var ObjectManager $objectManager */
-        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-        $this->subject = $objectManager->get(ExtensionSettingsService::class);
+        /** @var ExtensionSettingsService subject */
+        $this->subject = GeneralUtility::makeInstance(ExtensionSettingsService::class);
+        $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class);
+
+        $extensionConfiguration->set('api_key', 'sdsd');
     }
 
     /**
@@ -57,7 +62,6 @@ class ExtensionSettingsServiceTest extends UnitTestCase
      */
     public function getSettingExpectsEmptySettingsAsKeyIsUnknown()
     {
-        $this->markTestIncomplete('Consider implementation');
         $this->assertEquals(
             '',
             $this->subject->getSetting('no_valid_key')

@@ -26,6 +26,8 @@ namespace TNM\GolfCourses\Service;
  ***************************************************************/
 
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 /**
  * Class ExtensionSettingsService
@@ -34,10 +36,17 @@ use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 class ExtensionSettingsService
 {
     /**
-     * @var \TYPO3\CMS\Extbase\Object\ObjectManager
-     * @TYPO3\CMS\Extbase\Annotation\Inject
+     * @var ObjectManager
      */
     protected $objectManager;
+
+    /**
+     * ExtensionSettingsService constructor.
+     */
+    public function __construct()
+    {
+        $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+    }
 
     /**
      * @param $settingKey
