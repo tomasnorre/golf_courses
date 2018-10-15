@@ -44,10 +44,10 @@ class GolfCoursesCoordinatesTask extends AbstractTask
     protected $golfCourseRepository;
 
     /**
-     * @var \TNM\GolfCourses\Service\ExtensionSettingsService
-     * @inject
+     * @var \TYPO3\CMS\Core\Configuration\ExtensionConfiguration
+     * @TYPO3CMSExtbaseAnnotationInject
      */
-    protected $extensionSettingsService = null;
+    protected $extensionConfiguration = null;
 
     /**
      *
@@ -57,7 +57,7 @@ class GolfCoursesCoordinatesTask extends AbstractTask
         $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
         $this->golfCourseRepository = $objectManager->get(GolfCourseRepository::class);
 
-        $limit = $this->extensionSettingsService->getSetting('schedulerProcessLimit');
+        $limit = $this->extensionConfiguration->get('schedulerProcessLimit');
         $golfCoursesWithOutCoordinates = $this->golfCourseRepository->findCountriesWithOutCoordinates($limit);
         /** @var GolfCourse $golfCourse */
         foreach ($golfCoursesWithOutCoordinates as $golfCourse) {

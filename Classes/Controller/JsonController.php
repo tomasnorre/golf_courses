@@ -46,7 +46,7 @@ class JsonController extends ActionController
 
     /**
      * @var \TNM\GolfCourses\Domain\Repository\GolfCourseRepository
-     * @inject
+     * @TYPO3CMSExtbaseAnnotationInject
      */
     protected $golfCourseRepository;
 

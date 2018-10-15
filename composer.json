@@ -20,7 +20,7 @@
     "sjbr/static-info-tables": "dev-9lts"
   },
   "require-dev": {
-    "typo3/testing-framework": "*",
+    "nimut/testing-framework": "*",
     "helhum/typo3-console": "*"
   },
   "authors": [

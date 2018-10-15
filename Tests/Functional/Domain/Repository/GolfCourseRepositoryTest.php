@@ -25,11 +25,11 @@ namespace TNM\GolfCourses\Tests\Functional\Domain\Repository;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use Nimut\TestingFramework\TestCase\FunctionalTestCase;
 use TNM\GolfCourses\Domain\Model\GolfCourse;
 use TNM\GolfCourses\Domain\Repository\GolfCourseRepository;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
-use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 /**
  * Class GolfCourseRepositoryTest

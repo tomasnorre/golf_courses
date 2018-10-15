@@ -80,7 +80,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * @var \SJBR\StaticInfoTables\Domain\Repository\CountryRepository
-     * @inject
+     * @TYPO3CMSExtbaseAnnotationInject
      */
     protected $countryRepository;
 
