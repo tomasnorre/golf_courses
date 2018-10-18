@@ -33,7 +33,8 @@ use Nimut\TestingFramework\TestCase\FunctionalTestCase;
 class GolfCourseTest extends FunctionalTestCase
 {
     protected $testExtensionsToLoad = [
-        'typo3conf/ext/golf_courses'
+        'typo3conf/ext/golf_courses',
+        'typo3conf/ext/static_info_tables'
     ];
 
     /**

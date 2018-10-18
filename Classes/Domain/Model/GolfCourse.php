@@ -25,6 +25,7 @@ namespace TNM\GolfCourses\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
 use SJBR\StaticInfoTables\Domain\Model\Country;
 
 /**
