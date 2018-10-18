@@ -25,7 +25,7 @@ namespace TNM\GolfCourses\Tests\Functional\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
+use Nimut\TestingFramework\TestCase\FunctionalTestCase;
 
 /**
  * Class GolfCourseTest
@@ -33,7 +33,8 @@ use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 class GolfCourseTest extends FunctionalTestCase
 {
     protected $testExtensionsToLoad = [
-        'typo3conf/ext/golf_courses'
+        'typo3conf/ext/golf_courses',
+        'typo3conf/ext/static_info_tables'
     ];
 
     /**

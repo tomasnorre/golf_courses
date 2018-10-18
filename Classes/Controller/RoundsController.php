@@ -39,19 +39,19 @@ class RoundsController extends ActionController
 
     /**
      * @var \TNM\GolfCourses\Domain\Repository\GolfRoundRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $golfRoundRepository;
 
     /**
      * @var \TNM\GolfCourses\Domain\Repository\GolfCourseRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $golfCourseRepository;
 
     /**
      * @var \SJBR\StaticInfoTables\Domain\Repository\CountryRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $countryRepository;
 

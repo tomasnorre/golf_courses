@@ -25,9 +25,9 @@ namespace TNM\GolfCourses\Tests\Unit\Service;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+use Nimut\TestingFramework\TestCase\UnitTestCase;
 use TNM\GolfCourses\Service\ScoreService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /**
  * Class ScoreServiceTest

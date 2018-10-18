@@ -26,7 +26,7 @@ namespace TNM\GolfCourses\Tests\Unit\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
+use Nimut\TestingFramework\TestCase\UnitTestCase;
 
 /**
  * Test case for class \TNM\GolfCourses\Domain\Model\GolfCourse.

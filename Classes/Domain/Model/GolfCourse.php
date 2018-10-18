@@ -25,6 +25,7 @@ namespace TNM\GolfCourses\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
+
 use SJBR\StaticInfoTables\Domain\Model\Country;
 
 /**
@@ -80,7 +81,7 @@ class GolfCourse extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * @var \SJBR\StaticInfoTables\Domain\Repository\CountryRepository
-     * @inject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $countryRepository;
 
