@@ -41,19 +41,19 @@ class ListController extends ActionController
      * golfCourseRepository
      *
      * @var \TNM\GolfCourses\Domain\Repository\GolfCourseRepository
-     * @TYPO3CMSExtbaseAnnotationInject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $golfCourseRepository = null;
 
     /**
      * @var \SJBR\StaticInfoTables\Domain\Repository\CountryRepository
-     * @TYPO3CMSExtbaseAnnotationInject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $countryRepository = null;
 
     /**
      * @var \TYPO3\CMS\Core\Configuration\ExtensionConfiguration
-     * @TYPO3CMSExtbaseAnnotationInject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $extensionConfiguration = null;
 

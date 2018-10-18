@@ -45,7 +45,7 @@ class GolfCoursesCoordinatesTask extends AbstractTask
 
     /**
      * @var \TYPO3\CMS\Core\Configuration\ExtensionConfiguration
-     * @TYPO3CMSExtbaseAnnotationInject
+     * @TYPO3\CMS\Extbase\Annotation\Inject
      */
     protected $extensionConfiguration = null;
 
