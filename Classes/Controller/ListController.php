@@ -85,7 +85,7 @@ class ListController extends ActionController
             $countryAndCourses[$countryName]['coursesPlayed'] = $coursesInCountry->count();
         }
 
-        $this->view->assign('mapsApiKey', $this->extensionConfiguration->get('apiKey'));
+        $this->view->assign('mapsApiKey', $this->extensionConfiguration->get('golf_courses', 'apiKey'));
         $this->view->assign('countryAndCourses', $countryAndCourses);
         $this->view->assign('coursesCount', $coursesTotal);
         $this->view->assign('countriesCount', count($countryAndCourses));
