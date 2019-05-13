@@ -70,7 +70,7 @@ script:
     fi
 
 jobs:
-  allow_failure:
+  allow_failures:
     - env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=1
     - env: TYPO3_VERSION=dev-master COVERAGE=0 FUNCTIONAL=0
   include:
