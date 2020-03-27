@@ -63,8 +63,5 @@
     "helhum/typo3-console": {
       "install-extension-dummy": false
     }
-  },
-  "replace": {
-    "golf_courses": "self.version"
   }
 }
